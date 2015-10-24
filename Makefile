@@ -28,7 +28,11 @@ ${CAMLRUN} : ${OBJCMO} ${OBJCMI}
 	ocamllex $<
 
 clean :
-	- rm ${OBJCMO} ${OBJCMI} ${DEPSFILE} scanner.ml
+	- rm ${OBJCMO} ${OBJCMI} 
+
+
+submit : ${SOURCE}
+	submit cmps112-wm.f15 asg2 ${SOURCE} ${MKFILE} ${DEPSFILE} 
 
 spotless : clean
 	- rm ${CAMLRUN} ${LISTING} ${LISTING:.ps=.pdf}
